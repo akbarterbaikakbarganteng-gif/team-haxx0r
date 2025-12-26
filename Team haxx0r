@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>HACKED</title>
+<style>
+*{user-select:none}
+body{
+    margin:0;
+    background:black;
+    color:red;
+    font-family:Arial,Helvetica,sans-serif;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow:hidden;
+}
+.hidden{display:none}
+h1{animation:flicker 1s infinite}
+button{
+    margin-top:25px;
+    padding:15px 30px;
+    font-size:18px;
+    background:red;
+    color:black;
+    border:none;
+}
+@keyframes flicker{
+    0%{opacity:1}
+    50%{opacity:.6}
+    100%{opacity:1}
+}
+</style>
+</head>
+<body>
+
+<!-- SCREEN 1 -->
+<div id="screen1">
+    <h1>⚠️ANDA DI HACK BY TEAM Haxx0r⚠️</h1>
+    <h2>😹You idiot hahahahah😹</h2>
+</div>
+
+<!-- SCREEN 2 -->
+<div id="screen2" class="hidden">
+    <h1>😹SALAH DONGO😹</h1>
+    <button onclick="fakeExit()">Klik ini buat keluar</button>
+</div>
+
+<!-- SCREEN 3 -->
+<div id="screen3" class="hidden">
+    <h1>
+        ⚠️ANDA BENERAN<br>
+        DI DALAM DUNIA KEGELAPAN<br>
+        ANDA TIDAK BISA KELUAR⚠️
+    </h1>
+</div>
+
+<script>
+/* ===== FULLSCREEN PAKSA ===== */
+function goFull(){
+    if(!document.fullscreenElement){
+        document.documentElement.requestFullscreen().catch(()=>{});
+    }
+}
+goFull();
+setInterval(goFull,1000);
+
+/* ===== BLOK KELUAR ===== */
+window.onbeforeunload = ()=>"😹";
+document.addEventListener("keydown", e => e.preventDefault());
+
+/* ===== GETAR HP ===== */
+function startVibrate(){
+    if("vibrate" in navigator){
+        setInterval(()=>{
+            navigator.vibrate([500,200,800,200,500]);
+        },2000);
+    }
+}
+startVibrate();
+
+/* ===== FLOW PRANK ===== */
+setTimeout(()=>{
+    show(2);
+},5000);
+
+function fakeExit(){
+    show(3);
+    setTimeout(()=>show(1),6000);
+}
+
+function show(n){
+    screen1.classList.add("hidden");
+    screen2.classList.add("hidden");
+    screen3.classList.add("hidden");
+    document.getElementById("screen"+n).classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
